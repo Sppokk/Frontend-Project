@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hook</title>
+    <link rel="shortcut icon" type="image/png" href="img/ico.png" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header>
+        <div class=top>
+            <div Class="right">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <div class="center">
+                <nav>
+                    <a href="#">Sunglasses</a>
+                    <a href="#">Socks</a>
+                    <a href="#">Accessories</a>
+                    <a href="#">Bundle</a>
+                </nav>
+            </div>
+            <div class="left">
+                <button type="radio"  class="lupaBt" onclick="displaySearch()" > <img class="lupa"  src="img/lupa.png" alt="lens icon"> </button>
+                <span class="bagFull">
+                <button type="radio" class="bagBt" onclick="displayCart() "><img src="img/bag.png" alt="bag icon" class="bag" class="mag "></button>
+            </span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container card">
+        <div class="row">
+
+            <div id="bagContent" class="bagContent col-sm-6" style="display:none">
+                <h4>Your cart:</h4>
+                <hr>
+                <span id="conteudo">Nothing so far...</span><br>
+                <button class="hiddeCart" onclick="hiddeCart()"> ^ </button>
+            </div>
+        
+            <div class="displaySearch  col-sm-6" style="display:none"> 
+                <form id="pesquisa-form">
+                    <p>Search for your favourite model here!</p>
+                    <input type="text" name="pesquisa" id="model" placeholder=" EX. THE EMPIRE">
+                    <input type="submit" value="Search" id="pesquisa-form-submit">
+                </form>
+                <div class="col-sm-12 ">
+                    <div id="encontrado"></div>
+                </div>
+    
+                <button class="hiddeCart" onclick="hiddeSearch()"> ^ </button>
+            </div>
+
+            
+            <div class="imagem col-sm-12 ">
+                <img src="img/thehook.jpg" alt="image of a man wearing sun glasses and text'the Hook' "
+                    style="width:100%">
+                <div class="bottom-right">
+                    <p>Forged from aerospace grade titanium, <u>The Hook</u> provides the ultimate in confort and
+                        durability.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row col-12">
+                <div class="slideshow-container card carrosel1  col-sm-6">
+
+                    <div class="mySlides fade">
+                        <img src="img/glasses1.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="img/glasses2.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="img/glasses3.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="img/glasses4.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="img/glasses5.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="dots">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
+                </div>
+
+                <div class="slideshow-container carrosel2 card  col-sm-6" style="display:none">
+
+                    <div class="mySlides2 fade">
+                        <img src="img/blue1.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides2 fade">
+                        <img src="img/blue2.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides2 fade">
+                        <img src="img/blue3.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides2 fade">
+                        <img src="img/blue4.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides2 fade">
+                        <img src="img/blue5.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+
+                    <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides2(1)">&#10095;</a>
+
+                    <div class="dots2">
+                        <span class="dot2" onclick="currentSlide2(1)"></span>
+                        <span class="dot2" onclick="currentSlide2(2)"></span>
+                        <span class="dot2" onclick="currentSlide2(3)"></span>
+                        <span class="dot2" onclick="currentSlide2(4)"></span>
+                        <span class="dot2" onclick="currentSlide2(5)"></span>
+                    </div>
+                </div>
+
+                <div class="slideshow-container carrosel3 card  col-sm-6" style="display:none">
+
+                    <div class="mySlides3 fade">
+                        <img src="img/red1.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides3 fade">
+                        <img src="img/red2.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides3 fade">
+                        <img src="img/red3.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides3 fade">
+                        <img src="img/red4.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+                    <div class="mySlides3 fade">
+                        <img src="img/red5.jpg" alt="sunglasses" style="width:100%">
+                    </div>
+
+
+                    <a class="prev" onclick="plusSlides3(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides3(1)">&#10095;</a>
+
+                    <div class="dots3">
+                        <span class="dot3" onclick="currentSlide3(1)"></span>
+                        <span class="dot3" onclick="currentSlide3(2)"></span>
+                        <span class="dot3" onclick="currentSlide3(3)"></span>
+                        <span class="dot3" onclick="currentSlide3(4)"></span>
+                        <span class="dot3" onclick="currentSlide3(5)"></span>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6 ">
+                    <div class="choose">
+                        <div>
+                            <h3>$299</h3>
+                            <div>
+                                <p>Colors</p>
+
+                                <button id="radio" onclick="selectBlack()"> <img id="black"
+                                        class="radio black selectedBlack" src="img/black.png"> </button>
+
+                                <button id="radio" onclick="selectBlue()">
+                                    <img id="blue" class="radio blue" src="img/blue.jpg">
+                                </button>
+
+                                <button id="radio" onclick="selectRed()">
+                                    <img id="red" class="radio red selectedred" src="img/red.jpg">
+                                </button>
+
+
+                            </div>
+
+                            <div class="selection">
+                                <span id="add"  class="selected add ">ADD TO CART</span><span id="home" class="home" >TRY AT HOME</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="img/info.png" alt="technical information" style="width: 40%;">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="girl col-12 card">
+                <img src="img/girl.jpg" alt="Girl wearing glasses" style="width:100%">
+                <div class="video">
+
+                    <span>See what makes our shades special.</span>
+
+                    <img id="play" class="play" src="img/play.png" alt="play icon" style="height: 2em">
+                </div>
+            </div>
+
+            <div class="col-6 card">
+                <img src="img/man.png" alt="Man drinking coffee with sunglasses" style="width:100%">
+            </div>
+
+            <div class="col-6 card">
+                <img src="img/blackGlasses.jpg" alt="Black sunglasses" style="width:100%">
+            </div>
+
+            <div class="inner col-12">
+                <div>
+                    <button class="deleteComents" id="deleteComents" onclick="showComents()"> <img src="img/stars.jpg"
+                            alt="stars icon" class="mag2"> </button>
+
+                    <p>THE FRAMES ARE HARD AS A ROCK. MY DAD SAID I LOOK COOL WITH THEM ON. IF YOU'LL EXCUSE ME, I'M
+                        GOING
+                        TO
+                        PUT SOME BOTTLES NOW.</p>
+
+                    <p><img src="img/ico_checkmark.png" alt="checkmark" class="checkmark"><strong> Mike </strong><span
+                            style="opacity: 0.5;">Verified Buyer </span>
+                    </p>
+                    <hr>
+                </div>
+
+                <div>
+                    <span class="rate">4.9</span>
+                    <span class="based">Based on <u>2274 reviews</u></span>
+                    <p class="average">AVERAGE</p>
+                </div>
+
+                <div class="opinion" style="display:none">
+
+                    <h3>Other testimonials be like...</h3>
+                    <p>KICK ASS GLASSES! ALL THE GIRLS LOVE IT!</p>
+                    <p><img src="img/ico_checkmark.png" alt="checkmark" class="checkmark"><strong> John </strong><span
+                            style="opacity: 0.5;">Verified Buyer </span>
+                    </p>
+                    <hr>
+
+                    <p>GREAT LOOKING PIECE OF STYLE!</p>
+                    <p><img src="img/ico_checkmark.png" alt="checkmark" class="checkmark"><strong> Adrien </strong><span
+                            style="opacity: 0.5">Verified Buyer </span>
+                    </p>
+                    <hr>
+                    <p>GREAT LOOK! I WENT TO A JOB INTERVIEW WITH IT AND NAILED THE JOB</p>
+                    <p><img src="img/ico_checkmark.png" alt="checkmark" class="checkmark"><strong> Rossana
+                        </strong><span style="opacity: 0.5">Verified Buyer </span>
+                    </p>
+                    <hr>
+                    <p>And plenty of more like these....</p>
+                    <button class="hiddeComents" onclick="hiddeComents()"> ^ </button>
+                </div>
+            </div>
+
+
+            <div class=" col-12 fundo">
+                <h3>Made with aerospace grade titanium. Why? Because its the strongest metal for its weight in the
+                    world.</h3>
+            </div>
+
+            <div class="row tech col-12">
+
+                <div class=" col-md-6 infoTech">
+
+                    <img class="techImg" src="img/foto1.jpg" alt="Guy with sunglasses">
+                    <span class="position">
+                        <p>NEXT-GEN POLARIZATION</p>
+                        <button class="mag" onclick="displayPopup1();"> + </button>
+                    </span>
+                    <div class="texto1 info" style="display:none;">
+                        <button class="delete" onclick="hiddePopup1()"> ^ </button>
+                        <span>Polarized lenses have a special chemical applied to them to filter light. The chemical's
+                            molecules are lined up specifically to block some of the light from passing through the
+                            lens. Think of it like a miniblind hanging in front of a window. Only light that passes
+                            through the blind's openings can be seen.</span>
+                    </div>
+
+                </div>
+
+                <div class=" col-md-6 infoTech">
+
+                    <img class="techImg" src="img/foto2.jpg" alt="Sunglasses sideview">
+                    <span class="position">
+                        <p>UNIQUE ARMOR COATING</p>
+                        <button class="mag" onclick="displayPopup2();"> + </button>
+                    </span>
+                    <div class="texto2 info" style="display:none;">
+                        <button class="delete" onclick="hiddePopup2()"> ^ </button>
+                        <span>AR coating is highly recommended for all eyeglass lenses, but particularly for
+                            polycarbonate and high-index lenses, which reflect more light than regular glass or plastic
+                            lenses if anti-reflective coating is not applied.</span>
+                    </div>
+
+                </div>
+
+                <div class=" col-md-6 infoTech">
+
+                    <img class="techImg" src="img/laser.jpg" alt="Laser cutting">
+                    <span class="position">
+                        <p>LASER ETCHED</p>
+                        <button class="mag" onclick="displayPopup3();"> + </button>
+                    </span>
+                    <div class="texto3 info" style="display:none;">
+                        <button class="delete" onclick="hiddePopup3()"> ^ </button>
+                        <span>The primary difference between them is that engraving is a physical process, and etching
+                            is a chemical process. An engraver uses sharp tools to cut lines directly into a surface,
+                            while an etcher burns lines into a surface with acid.</span>
+                    </div>
+
+                </div>
+
+                <div class=" col-md-6 infoTech">
+
+                    <img class="techImg" src="img/acetate.jpg" alt="Image of the inside of sunglasses">
+                    <span class="position">
+                        <p>SUPER PREMIUM ACETATE</p>
+                        <button class="mag" onclick="displayPopup4();"> + </button>
+                    </span>
+                    <div class="texto4 info" style="display:none;">
+                        <button class="delete" onclick="hiddePopup4()"> ^ </button>
+                        <span>
+                            Acetate frames are lightweight and often considered better and higher quality than plastic
+                            frames. They are known for their hypoallergenic qualities and are therefore a popular choice
+                            amongst those with sensitive skin. Unlike certain plastic frames or some metal frames, they
+                            are less likely to cause irritation.</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="col-md-12 alsoLike">
+                <h3>You May Also Like</h3>
+            </div>
+
+            <div class="col-sm-4 card ">
+                <img class="zoomA" src="img/oculos1.jpg" alt="Rayban sunglasses" style="width:80%">
+                <p class="others">THE LEVEL</p>
+            </div>
+
+            <div class="col-sm-4 card">
+                <img class="zoomB" src="img/oculos2.jpg" alt="Sunglasses" style="width:80%">
+                <p class="others">THE EMPIRE</p>
+            </div>
+
+            <div class="col-sm-4 card ">
+                <img class="zoomC" src="img/oculos3.jpg" alt="Sunglasses" style="width:80%">
+                <p class="others">THE OASIS</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="scripts/script.js"></script>
+
+</body>
+
+</html>
